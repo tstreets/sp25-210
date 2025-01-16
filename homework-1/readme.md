@@ -2,7 +2,8 @@
 
 ### Websites vs Web Applications
 
-Brief description of understanding. Use any combination of markdown techniques. Should be more than 2 sentences.
+1. Websites are for info
+2. Blah blah blah
 
 ### VS Code & Extensions
 
