@@ -19,7 +19,7 @@
 
     <h1>Containers and Forms</h1>
 
-    <form action="index.html" method="get">
+    <form action="https://wp.zybooks.com/form-viewer.php" method="post">
       <div>
         <label for="favoriteSnack">Favorite Snack:</label>
         <input
@@ -43,7 +43,7 @@
 
       <div>
         <label for="explain">Explain Your Choices:</label>
-        <textarea name="explain" id="explain"></textarea>
+        <textarea name="explain" id="explain" cols="50" rows="10"></textarea>
       </div>
 
       <div>
@@ -51,7 +51,13 @@
         <input type="color" name="snackColorMood" id="snackColorMood" />
       </div>
 
+      <div>
+        <label for="snackPic">Picture of Snacks:</label>
+        <input type="file" accept="image/*" />
+      </div>
+
       <input type="submit" value="Submit Snacks" />
+      <button type="submit">It's the same thing</button>
     </form>
   </body>
 </html>
