@@ -18,5 +18,84 @@
     </nav>
 
     <h1>More Forms</h1>
+
+    <form action="moreforms.html" method="get">
+      <div>
+        <input
+          type="checkbox"
+          name="soulContract"
+          id="soulContract"
+          checked
+          disabled
+          value="Signed"
+        />
+        <label for="soulContract">Sign away your soul</label>
+      </div>
+
+      <div>
+        <div>
+          <input
+            type="radio"
+            name="lengthContract"
+            id="lengthContract1"
+            value="1"
+          />
+          <label for="lengthContract1">1 Year</label>
+        </div>
+
+        <div>
+          <input
+            type="radio"
+            name="lengthContract"
+            id="lengthContract2"
+            value="2"
+          />
+          <label for="lengthContract2">2 Years</label>
+        </div>
+
+        <div>
+          <input
+            type="radio"
+            name="lengthContract"
+            id="lengthContract50"
+            checked
+            value="50"
+          />
+          <label for="lengthContract50">50 Year</label>
+        </div>
+      </div>
+
+      <fieldset>
+        <legend>Personal Info</legend>
+
+        <div>
+          <label for="fullname">Fullname:</label>
+          <input
+            type="text"
+            name="fullname"
+            id="fullname"
+            required
+            list="commonNames"
+          />
+
+          <datalist id="commonNames">
+            <option value="Scappy">Scappy</option>
+            <option value="Meowth">Meowth</option>
+            <option value="Human">Human</option>
+          </datalist>
+        </div>
+
+        <select name="title" id="title">
+          <option value="Necromancer">Necromancer</option>
+          <option value="Jester">Jester</option>
+          <option value="Barbarian">Barbarian</option>
+          <option value="Janitor">Janitor</option>
+        </select>
+      </fieldset>
+
+      <div>
+        <input type="submit" value="E-Sign" />
+      </div>
+    </form>
   </body>
 </html>
