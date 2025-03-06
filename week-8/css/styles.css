@@ -46,3 +46,7 @@ nav ul li a {
 body > ul {
   margin-left: 32px;
 }
+
+main {
+  padding: 20px;
+}
