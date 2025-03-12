@@ -69,6 +69,7 @@ function startJourney() {
 
     newSection.innerHTML += "<h4>" + pokemon.name + "</h4>";
 
+    // Setting data attributes to be used in the choosePokemon function
     newSection.dataset.pokemonName = pokemon.name;
     newSection.dataset.pokemonImage = pokemon.img;
     newSection.onclick = choosePokemon;
@@ -80,6 +81,7 @@ function startJourney() {
 
 function choosePokemon(e) {
   console.log(e.currentTarget);
+  // Getting data attributes from the option selected
   const pokemonName = e.currentTarget.dataset.pokemonName;
   const pokemonImg = e.currentTarget.dataset.pokemonImage;
 
@@ -88,11 +90,54 @@ function choosePokemon(e) {
   if (confirmChoice) {
     journeyRef.innerHTML +=
       "You chose " + pokemonName + " as your starter pokemon.";
-    journeyRef.innerHTML += "<button>Choice 1</button>";
-    journeyRef.innerHTML += "<button>Choice 2</button>";
 
+    // creating a new button choice for the players based on pokemon
+    const atkBtn = document.createElement("button");
+    atkBtn.onclick = attackMove;
+
+    // if / else blocks checking what pokemon was chosen
+    // dynamically setting button text and data attribute
+    if (pokemonName === "Bulbasaur") {
+      atkBtn.innerHTML = "Vine Whip";
+      atkBtn.dataset.move = "Vine Whip";
+    } else if (pokemonName === "Charmander") {
+      atkBtn.innerHTML = "Ember";
+      atkBtn.dataset.move = "Ember";
+    } else if (pokemonName === "Squirtle") {
+      atkBtn.innerHTML = "Water Gun";
+      atkBtn.dataset.move = "Water Gun";
+    }
+    journeyRef.appendChild(atkBtn);
+
+    const runAwayButton = document.createElement("button");
+    runAwayButton.innerHTML = "Run Away";
+    runAwayButton.onclick = runAway;
+    journeyRef.appendChild(runAwayButton);
+
+    // saving their pokemon for future uses without
     myPokemon = { name: pokemonName, img: pokemonImg };
   } else {
     journeyRef.innerHTML += "";
+  }
+}
+
+function runAway() {
+  //
+  journeyRef.innerHTML = "You ran away";
+}
+
+function attackMove(e) {
+  // Getting data attributes from the option selected
+  const attackMove = e.currentTarget.dataset.move;
+
+  journeyRef.innerHTML += myPokemon.name + " used " + attackMove;
+
+  // creating a new button choice based on move
+  if (attackMove === "Vine Whip") {
+    // do this
+  } else if (attackMove === "Ember") {
+    // do that
+  } else {
+    // last options
   }
 }
