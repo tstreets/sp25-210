@@ -89,7 +89,7 @@ function choosePokemon(e) {
 
   if (confirmChoice) {
     journeyRef.innerHTML +=
-      "You chose " + pokemonName + " as your starter pokemon.";
+      "<p>You chose " + pokemonName + " as your starter pokemon.</p>";
 
     // creating a new button choice for the players based on pokemon
     const atkBtn = document.createElement("button");
@@ -123,14 +123,15 @@ function choosePokemon(e) {
 
 function runAway() {
   //
-  journeyRef.innerHTML = "You ran away";
+  journeyRef.innerHTML = "<p>You ran away</p>";
 }
 
 function attackMove(e) {
   // Getting data attributes from the option selected
   const attackMove = e.currentTarget.dataset.move;
 
-  journeyRef.innerHTML += myPokemon.name + " used " + attackMove;
+  journeyRef.innerHTML +=
+    "<p>" + myPokemon.name + " used " + attackMove + "</p>";
 
   // creating a new button choice based on move
   if (attackMove === "Vine Whip") {
