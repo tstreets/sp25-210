@@ -123,7 +123,7 @@ function choosePokemon(e) {
 
 function runAway() {
   //
-  journeyRef.innerHTML = "<p>You ran away</p>";
+  journeyRef.innerHTML += "<p>You ran away</p>";
 }
 
 function attackMove(e) {
