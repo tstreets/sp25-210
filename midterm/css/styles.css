@@ -1,0 +1,129 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-bottom: 16px;
+}
+
+nav ul {
+  display: flex;
+  gap: 50px;
+
+  list-style: none;
+  background-color: #d9d9d9;
+  padding: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+.brand {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.active {
+  border-bottom: 3px solid black;
+}
+
+.hero {
+  margin: 40px 10px;
+  display: flex;
+  gap: 40px;
+}
+
+.hero-text {
+  padding: 20px 0;
+  display: grid;
+}
+
+.hero-text button {
+  width: 180px;
+  height: 40px;
+}
+
+button {
+  background-color: black;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+button a {
+  color: white;
+  text-decoration: none;
+}
+
+h2 {
+  display: inline;
+  border-bottom: 5px solid black;
+  margin-left: 10px;
+}
+
+.featured {
+  display: flex;
+  gap: 100px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+}
+
+.featured img {
+  height: 200px;
+  width: 200px;
+}
+
+.featured + button {
+  margin-left: 10px;
+}
+
+.about-hero {
+  margin: 40px 10px;
+}
+
+.events {
+  display: flex;
+  gap: 100px;
+}
+
+.events div {
+  margin: 40px 10px;
+  width: 300px;
+}
+
+#catalog-header {
+  margin: 40px 10px;
+}
+
+#catalog {
+  display: grid;
+  grid-template-columns: 200px 200px 200px;
+  gap: 40px;
+}
+
+#catalog div {
+  width: 200px;
+}
+
+#catalog div img {
+  width: 200px;
+}
+
+#catalog div h4 {
+  text-align: center;
+}
