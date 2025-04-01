@@ -40,3 +40,7 @@ nav a:hover {
   text-decoration-style: wavy;
   text-underline-offset: 3px;
 }
+
+#dreams {
+  margin-left: 20px;
+}
