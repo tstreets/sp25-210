@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-bottom: 16px;
+}
+
+nav ul {
+  background-color: #844e7d;
+  list-style: none;
+  padding: 20px;
+
+  display: flex;
+  gap: 40px;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  padding: 5px 10px;
+}
+
+nav a:hover {
+  text-decoration: 5px underline;
+  text-decoration-style: wavy;
+  text-underline-offset: 3px;
+}
