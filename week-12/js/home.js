@@ -4,6 +4,7 @@ import {
   getFirestore,
   collection,
   getDocs,
+  addDoc,
 } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
 
 const db = getFirestore(app);
@@ -11,6 +12,8 @@ const db = getFirestore(app);
 const dreamsCollection = collection(db, "hopesdreams");
 
 const dreamsRef = document.querySelector("#dreams");
+const dreamFormRef = document.querySelector("#new-dream");
+const dreamTextRef = document.querySelector("#dream-text");
 
 async function getDreams() {
   const dreamsDocs = await getDocs(dreamsCollection);
@@ -24,5 +27,21 @@ async function getDreams() {
     dreamsRef.innerHTML += "<li>" + dreamData.text + "</li>";
   }
 }
+
+async function addNewDream(e) {
+  e.preventDefault();
+
+  const dreamTextValue = dreamTextRef.value;
+
+  const newDream = await addDoc(dreamsCollection, { text: dreamTextValue });
+
+  console.log(newDream);
+
+  getDreams();
+
+  dreamFormRef.reset();
+}
+
+dreamFormRef.onsubmit = addNewDream;
 
 getDreams();
