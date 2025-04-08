@@ -44,6 +44,7 @@ async function getDreams() {
     newHeartButton.classList.add("heart");
     newHeartButton.innerHTML = "&hearts;";
     newHeartButton.dataset.id = currentDream.id;
+    newHeartButton.dataset.hearts = data.hearts || 0;
     newHeartButton.onclick = addHeart;
 
     // Adding element through appendChild
@@ -55,8 +56,17 @@ async function getDreams() {
   }
 }
 
-function addHeart(e) {
+async function addHeart(e) {
   console.log("Add heart", e.target.dataset.id);
+
+  const newHeartCount = Number(e.target.dataset.hearts) + 1;
+
+  const dreamToUpdate = doc(dreamsCollection, e.target.dataset.id);
+
+  await updateDoc(dreamToUpdate, { hearts: newHeartCount });
+
+  //   alert("Dream updated");
+  getDreams();
 }
 
 getDreams();
