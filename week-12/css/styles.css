@@ -44,3 +44,34 @@ nav a:hover {
 #dreams {
   margin-left: 20px;
 }
+
+section#dreams {
+  display: grid;
+  gap: 40px;
+}
+
+.dream {
+  border: 2px solid black;
+  height: 200px;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.dream p {
+  margin-top: auto;
+}
+
+.dream .heart {
+  color: red;
+  font-size: 30px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.dream .edit {
+  padding: 4px;
+}
