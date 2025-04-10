@@ -25,34 +25,24 @@ async function getDreams() {
 
     const data = currentDream.data();
 
-    // Creating my div
-    const newDiv = document.createElement("div");
-    newDiv.classList.add("dream");
-    newDiv.innerHTML += `<h4>${data.text}</h4>
-        <p>Likes: ${data.hearts || 0}</p>`;
+    const hearts = data.hearts || 0;
 
-    // creating the p tag for the buttons
-    const newPTag = document.createElement("p");
+    dreamsRef.innerHTML += `
+    <div class="dream">
+        <h4>${data.text}</h4>
+        <p>Likes: ${hearts}</p>
+        <p>
+          <button class="edit">Edit</button>
+          <button class="heart" data-id="${currentDream.id}" data-hearts="${hearts}" >&hearts;</button>
+        </p>
+      </div>
+    `;
+  }
 
-    // edit button
-    const newEditButton = document.createElement("button");
-    newEditButton.innerHTML = "Edit";
-    newEditButton.classList.add("edit");
+  const heartsRef = document.querySelectorAll(".heart");
 
-    // heart button
-    const newHeartButton = document.createElement("button");
-    newHeartButton.classList.add("heart");
-    newHeartButton.innerHTML = "&hearts;";
-    newHeartButton.dataset.id = currentDream.id;
-    newHeartButton.dataset.hearts = data.hearts || 0;
-    newHeartButton.onclick = addHeart;
-
-    // Adding element through appendChild
-    newPTag.appendChild(newEditButton);
-    newPTag.appendChild(newHeartButton);
-    newDiv.appendChild(newPTag);
-
-    dreamsRef.appendChild(newDiv);
+  for (let i = 0; i < heartsRef.length; i++) {
+    heartsRef[i].onclick = addHeart;
   }
 }
 
