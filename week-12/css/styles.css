@@ -75,3 +75,7 @@ section#dreams {
 .dream .edit {
   padding: 4px;
 }
+
+.delete {
+  color: red;
+}
